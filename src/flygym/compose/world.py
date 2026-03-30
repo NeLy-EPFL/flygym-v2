@@ -56,6 +56,7 @@ class BaseWorld(BaseCompositionElement, ABC):
         self._neutral_keyframe = self.mjcf_root.keyframe.add(
             "key", name="neutral", time=0
         )
+        self._add_skybox()
 
     @override
     @property
@@ -91,6 +92,37 @@ class BaseWorld(BaseCompositionElement, ABC):
             The free joint element created by the attachment.
         """
         pass
+
+    def _add_skybox(self):
+        self.mjcf_root.asset.add(
+            "texture",
+            name="skybox",
+            type="skybox",
+            builtin="gradient",
+            rgb1=(1, 1, 1),
+            rgb2=(1, 1, 1),
+            width=10,
+            height=10,
+        )
+
+    def add_light(
+        self,
+        name="light_top",
+        type="directional",
+        castshadow=False,
+        pos=(0, 0, 80),
+        dir=(0, 0, -1),
+        **kwargs,
+    ):
+        self.mjcf_root.worldbody.add(
+            "light",
+            name=name,
+            type=type,
+            castshadow=castshadow,
+            pos=pos,
+            dir=dir,
+            **kwargs,
+        )
 
     def add_fly(
         self,
