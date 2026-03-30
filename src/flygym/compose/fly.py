@@ -1,3 +1,4 @@
+from functools import cached_property
 from os import PathLike
 from enum import Enum
 from fnmatch import filter as filter_with_wildcard
@@ -161,6 +162,9 @@ class Fly(BaseCompositionElement):
         self.jointdof_to_neutralangle = {}
         self.jointdof_to_neutralaction_by_type = {ty: {} for ty in ActuatorType}
 
+        self.eyecameraname_to_mjcfcamera = {}
+        self.hiddenbodyseg_to_mjcfgeom = {}
+
         if isinstance(root_segment, str):
             root_segment = BodySegment(root_segment)
         self.root_segment = root_segment
@@ -181,6 +185,12 @@ class Fly(BaseCompositionElement):
     def name(self) -> str:
         """Name of this fly instance."""
         return self._name
+
+    @cached_property
+    def retina(self):
+        from flygym.vision.retina import Retina
+
+        return Retina()
 
     def get_bodysegs_order(self) -> list[BodySegment]:
         """Get the canonical order of body segments. The exact order is not important,
@@ -391,6 +401,43 @@ class Fly(BaseCompositionElement):
                 ctrlrange=(1, 100),
             )
         return self.leg_to_adhesionactuator
+
+    def add_vision(self, draw_sensor_markers: bool = False):
+        with open(assets_dir / "model/vision.yaml") as f:
+            info = yaml.safe_load(f)
+
+        return_dict = {}
+
+        for sensor_name, sensor_info in info["sensors"].items():
+            parent_body = self.mjcf_root.find("body", sensor_info["parent"])
+            sensor_body = parent_body.add(
+                "body",
+                name=f"{sensor_name}_body",
+                pos=sensor_info["rel_pos"],
+            )
+            cam = sensor_body.add(
+                "camera",
+                name=f"{sensor_name}_camera",
+                mode="fixed",
+                euler=sensor_info["orientation"],
+                fovy=info["fovy_per_eye"],
+            )
+            if draw_sensor_markers:
+                sensor_body.add(
+                    "geom",
+                    name=f"{sensor_name}_marker",
+                    type="sphere",
+                    size=[0.06],
+                    rgba=sensor_info["marker_rgba"],
+                )
+            return_dict[sensor_name] = cam
+
+        self.eyecameraname_to_mjcfcamera.update(return_dict)
+
+        for segment_name in info["hidden_segments"]:
+            self.hiddenbodyseg_to_mjcfgeom[segment_name] = self.mjcf_root.find(
+                "geom", segment_name
+            )
 
     def colorize(
         self, visuals_config_path: PathLike = DEFAULT_VISUALS_CONFIG_PATH
