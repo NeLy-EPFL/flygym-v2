@@ -403,6 +403,17 @@ class Fly(BaseCompositionElement):
         return self.leg_to_adhesionactuator
 
     def add_vision(self, draw_sensor_markers: bool = False):
+        """Add eye cameras and hidden-segment metadata from vision config.
+
+        Loads camera definitions from ``assets/model/vision.yaml`` and creates one
+        fixed camera per sensor under the configured parent body. Optionally adds
+        small marker geoms at sensor locations for debugging. Also records body
+        segments that should be hidden during fly-eye rendering.
+
+        Args:
+            draw_sensor_markers: If True, add visible marker geoms at sensor
+                positions.
+        """
         with open(assets_dir / "model/vision.yaml") as f:
             info = yaml.safe_load(f)
 

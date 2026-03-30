@@ -94,6 +94,11 @@ class BaseWorld(BaseCompositionElement, ABC):
         pass
 
     def _add_skybox(self):
+        """Add a plain gradient skybox texture to the world assets.
+
+        The texture is intentionally white-to-white so it provides a neutral,
+        uncluttered background for visualization.
+        """
         self.mjcf_root.asset.add(
             "texture",
             name="skybox",
@@ -114,6 +119,18 @@ class BaseWorld(BaseCompositionElement, ABC):
         dir=(0, 0, -1),
         **kwargs,
     ):
+        """Add a MuJoCo light source to the world body.
+
+        Args:
+            name: Light name.
+            type: MuJoCo light type (for example ``"directional"`` or
+                ``"point"``).
+            castshadow: Whether the light casts shadows.
+            pos: Light position in world coordinates.
+            dir: Light direction vector.
+            **kwargs: Additional light attributes forwarded to
+                ``mjcf.Element.add("light", ...)``.
+        """
         self.mjcf_root.worldbody.add(
             "light",
             name=name,

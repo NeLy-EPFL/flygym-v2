@@ -264,6 +264,19 @@ class Simulation:
     def get_raw_vision(
         self, fly_name: str
     ) -> list[Float[np.ndarray, "height width 3"]]:
+        """Render raw eye-camera images for a fly.
+
+        Hidden body segments configured by ``fly.add_vision()`` are temporarily made
+        transparent while rendering to emulate the fly's visual field. The original
+        alpha values are restored before returning.
+
+        Args:
+            fly_name: Name of the fly.
+
+        Returns:
+            List of RGB images, one per eye camera, each with shape
+            ``(height, width, 3)``.
+        """
         self._last_vision_render_time = self.time
         internal_hidden_segment_ids = self._intern_hidden_segment_ids_by_fly[fly_name]
         alpha = self.mj_model.geom_rgba[internal_hidden_segment_ids, 3].copy()
@@ -286,6 +299,17 @@ class Simulation:
     def get_ommatidia_readouts(
         self, fly_name: str
     ) -> Float[np.ndarray, "n_cameras n_ommatidia 2"]:
+        """Convert raw eye images to per-ommatidium retinal readouts.
+
+        This method first renders raw vision frames using ``get_raw_vision`` and then
+        applies the fly's retina model to compute ommatidia readouts.
+
+        Args:
+            fly_name: Name of the fly.
+
+        Returns:
+            Retinal readouts with shape ``(n_cameras, n_ommatidia, 2)``.
+        """
         raw_vision = self.get_raw_vision(fly_name)
         retina = self.world.fly_lookup[fly_name].retina
         ommatidia_readouts = np.array(
