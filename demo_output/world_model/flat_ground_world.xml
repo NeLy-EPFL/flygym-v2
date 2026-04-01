@@ -1,0 +1,560 @@
+<mujoco model="flat_ground_world">
+  <compiler autolimits="true" boundmass="9.9999999999999995e-07" boundinertia="9.9999999999999998e-13" angle="radian" eulerseq="XYZ" fusestatic="true"/>
+  <option timestep="0.0001" gravity="0 0 -9810" integrator="Euler" solver="Newton" iterations="100" noslip_iterations="5">
+    <flag energy="enable" multiccd="enable"/>
+  </option>
+  <visual>
+    <headlight ambient="0.5 0.5 0.5" diffuse="0.59999999999999998 0.59999999999999998 0.59999999999999998" specular="0.29999999999999999 0.29999999999999999 0.29999999999999999"/>
+    <map stiffness="1000000" stiffnessrot="5000000" force="1.0000000000000001e-05" torque="0.00020000000000000001"/>
+  </visual>
+  <default>
+    <default class="/"/>
+    <default class="nmf/"/>
+  </default>
+  <asset>
+    <texture name="checker" type="2d" builtin="checker" rgb1="0.29999999999999999 0.29999999999999999 0.29999999999999999" rgb2="0.40000000000000002 0.40000000000000002 0.40000000000000002" width="300" height="300"/>
+    <material name="grid" class="/" texture="checker" texrepeat="250 250" reflectance="0.20000000000000001"/>
+    <mesh name="nmf/c_thorax" class="nmf/" file="c_thorax-bd37f753b689721e52b3f11e7b7e53056d58c176.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/c_head" class="nmf/" file="c_head-7227f5a259368a94b9c4daa38115e125baa8b5e4.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/c_rostrum" class="nmf/" file="c_rostrum-5e39518fecaefb180162b126e850c42e65d7d24f.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/c_haustellum" class="nmf/" file="c_haustellum-3dfc3c1da359ef1fed4cc8dd8e575e3166da97e8.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/c_abdomen12" class="nmf/" file="c_abdomen12-a8d3b2092c0571e951c358e8d9536526eeecfadb.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/c_abdomen3" class="nmf/" file="c_abdomen3-1f0954c337602ed3433f170cfeeb165233459e93.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/c_abdomen4" class="nmf/" file="c_abdomen4-9eadc4169cd302e24703574f41608d390e1b3210.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/c_abdomen5" class="nmf/" file="c_abdomen5-11f947c4a9f3d24975aa1ceb8786b1b4c448f0c7.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/c_abdomen6" class="nmf/" file="c_abdomen6-b284da8f3035ebb1155e510b235ec455b2dceec9.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/l_eye" class="nmf/" file="l_eye-37af822ee1b2e87ad52e4bbfaa7e53f3cf82537e.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/r_eye" class="nmf/" file="l_eye-37af822ee1b2e87ad52e4bbfaa7e53f3cf82537e.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/l_pedicel" class="nmf/" file="l_pedicel-1040a34bd5b5a9957cf9ca4c488b4bf9d185ba42.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/l_funiculus" class="nmf/" file="l_funiculus-c1035b2ae2f250d031c1ae124c8779821087f76e.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/l_arista" class="nmf/" file="l_arista-ca5a94f3b4156aad813ba22162c061ec202b9408.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/r_pedicel" class="nmf/" file="l_pedicel-1040a34bd5b5a9957cf9ca4c488b4bf9d185ba42.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/r_funiculus" class="nmf/" file="l_funiculus-c1035b2ae2f250d031c1ae124c8779821087f76e.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/r_arista" class="nmf/" file="l_arista-ca5a94f3b4156aad813ba22162c061ec202b9408.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/l_wing" class="nmf/" file="l_wing-4b059e8ef720d55ed2e83368728f667478334ba7.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/r_wing" class="nmf/" file="l_wing-4b059e8ef720d55ed2e83368728f667478334ba7.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/l_haltere" class="nmf/" file="l_haltere-5ce9659a6f1f6b997b459d1cc91812189ac785b4.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/r_haltere" class="nmf/" file="l_haltere-5ce9659a6f1f6b997b459d1cc91812189ac785b4.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/lf_coxa" class="nmf/" file="lf_coxa-1321c57273cb04d3ffed05c96e37110a354a690a.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lf_trochanterfemur" class="nmf/" file="lf_trochanterfemur-241f81c512fae0bc04fa5ed6b6ae0793f0a67c5a.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lf_tibia" class="nmf/" file="lf_tibia-bc9473c6217db75eba20d8643322fdf77d21fd18.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lf_tarsus1" class="nmf/" file="lf_tarsus1-1d147b1716e7cac4d306a3674bf7ff78d920b433.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lf_tarsus2" class="nmf/" file="lf_tarsus2-b70ade6a1b7d78fcc09e5f00442efb7713b8d741.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lf_tarsus3" class="nmf/" file="lf_tarsus3-ed4a9553f2f81f9db0aca50a2c71673297de512d.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lf_tarsus4" class="nmf/" file="lf_tarsus4-ae38a2f510fa46e3398a9026698c2fa9c5da1892.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lf_tarsus5" class="nmf/" file="lf_tarsus5-49613537901312348802346b32762812e5f25d33.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lm_coxa" class="nmf/" file="lm_coxa-20287d4dd0b1e39d7ba5595942b6415576630c25.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lm_trochanterfemur" class="nmf/" file="lm_trochanterfemur-79abf8f6fb0906078e3bbfaed664639e7fe0e0f5.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lm_tibia" class="nmf/" file="lm_tibia-5b1c0ce0184c5b8801a3e7f20fb608ac633f35aa.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lm_tarsus1" class="nmf/" file="lm_tarsus1-5396934c3d3c1510dd67698dca637cf5117a843f.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lm_tarsus2" class="nmf/" file="lm_tarsus2-5b9cc095b7cbad69a6483e110b2732f3c24ee94c.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lm_tarsus3" class="nmf/" file="lm_tarsus3-926037bff9d9c5257d1e640aef23ac464d132c01.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lm_tarsus4" class="nmf/" file="lm_tarsus4-9835eec5f3a691e4aaa2af172dad1abfe2beb84f.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lm_tarsus5" class="nmf/" file="lm_tarsus5-a30e84c23a5a95f4bc8ad4d2c0164c21e8941639.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lh_coxa" class="nmf/" file="lh_coxa-32afbdd3e3d23227f7e8791d459f370f3e514a39.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lh_trochanterfemur" class="nmf/" file="lh_trochanterfemur-0a494293ecc8c9a4da7204bf099fad714e625e23.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lh_tibia" class="nmf/" file="lh_tibia-2c0ce68948ec97b9fd8128e5e050a330f347d7b9.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lh_tarsus1" class="nmf/" file="lh_tarsus1-611bb8735c9e036775ad304668305a3b3ca90c73.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lh_tarsus2" class="nmf/" file="lh_tarsus2-d09375a6d0bf5d1d6b73f42b227dd4b952842459.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lh_tarsus3" class="nmf/" file="lh_tarsus3-4f8b67478664dfd54acdce2b6f4fa30d19263ece.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lh_tarsus4" class="nmf/" file="lh_tarsus4-e41c7f2e6fa0cc7e102807cf115c94bfc3fe6005.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/lh_tarsus5" class="nmf/" file="lh_tarsus5-08cf1d51c63e82183edcc0a4ba324adea0785a89.stl" scale="1000 1000 1000"/>
+    <mesh name="nmf/rf_coxa" class="nmf/" file="lf_coxa-1321c57273cb04d3ffed05c96e37110a354a690a.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rf_trochanterfemur" class="nmf/" file="lf_trochanterfemur-241f81c512fae0bc04fa5ed6b6ae0793f0a67c5a.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rf_tibia" class="nmf/" file="lf_tibia-bc9473c6217db75eba20d8643322fdf77d21fd18.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rf_tarsus1" class="nmf/" file="lf_tarsus1-1d147b1716e7cac4d306a3674bf7ff78d920b433.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rf_tarsus2" class="nmf/" file="lf_tarsus2-b70ade6a1b7d78fcc09e5f00442efb7713b8d741.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rf_tarsus3" class="nmf/" file="lf_tarsus3-ed4a9553f2f81f9db0aca50a2c71673297de512d.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rf_tarsus4" class="nmf/" file="lf_tarsus4-ae38a2f510fa46e3398a9026698c2fa9c5da1892.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rf_tarsus5" class="nmf/" file="lf_tarsus5-49613537901312348802346b32762812e5f25d33.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rm_coxa" class="nmf/" file="lm_coxa-20287d4dd0b1e39d7ba5595942b6415576630c25.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rm_trochanterfemur" class="nmf/" file="lm_trochanterfemur-79abf8f6fb0906078e3bbfaed664639e7fe0e0f5.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rm_tibia" class="nmf/" file="lm_tibia-5b1c0ce0184c5b8801a3e7f20fb608ac633f35aa.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rm_tarsus1" class="nmf/" file="lm_tarsus1-5396934c3d3c1510dd67698dca637cf5117a843f.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rm_tarsus2" class="nmf/" file="lm_tarsus2-5b9cc095b7cbad69a6483e110b2732f3c24ee94c.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rm_tarsus3" class="nmf/" file="lm_tarsus3-926037bff9d9c5257d1e640aef23ac464d132c01.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rm_tarsus4" class="nmf/" file="lm_tarsus4-9835eec5f3a691e4aaa2af172dad1abfe2beb84f.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rm_tarsus5" class="nmf/" file="lm_tarsus5-a30e84c23a5a95f4bc8ad4d2c0164c21e8941639.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rh_coxa" class="nmf/" file="lh_coxa-32afbdd3e3d23227f7e8791d459f370f3e514a39.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rh_trochanterfemur" class="nmf/" file="lh_trochanterfemur-0a494293ecc8c9a4da7204bf099fad714e625e23.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rh_tibia" class="nmf/" file="lh_tibia-2c0ce68948ec97b9fd8128e5e050a330f347d7b9.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rh_tarsus1" class="nmf/" file="lh_tarsus1-611bb8735c9e036775ad304668305a3b3ca90c73.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rh_tarsus2" class="nmf/" file="lh_tarsus2-d09375a6d0bf5d1d6b73f42b227dd4b952842459.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rh_tarsus3" class="nmf/" file="lh_tarsus3-4f8b67478664dfd54acdce2b6f4fa30d19263ece.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rh_tarsus4" class="nmf/" file="lh_tarsus4-e41c7f2e6fa0cc7e102807cf115c94bfc3fe6005.stl" scale="1000 -1000 1000"/>
+    <mesh name="nmf/rh_tarsus5" class="nmf/" file="lh_tarsus5-08cf1d51c63e82183edcc0a4ba324adea0785a89.stl" scale="1000 -1000 1000"/>
+    <material name="nmf/wing" class="nmf/" specular="0.20000000000000001" shininess="0.20000000000000001" rgba="0.80000000000000004 0.80000000000000004 0.90000000000000002 0.29999999999999999"/>
+    <material name="nmf/eye" class="nmf/" specular="0.20000000000000001" shininess="0.20000000000000001" rgba="0.67000000000000004 0.20999999999999999 0.12 1"/>
+    <material name="nmf/arista" class="nmf/" specular="0.20000000000000001" shininess="0.20000000000000001" rgba="0.26000000000000001 0.20000000000000001 0.16 1"/>
+    <material name="nmf/haltere" class="nmf/" specular="0.20000000000000001" shininess="0.20000000000000001" rgba="0.58999999999999997 0.42999999999999999 0.23999999999999999 1"/>
+    <material name="nmf/headthorax" class="nmf/" texture="nmf/headthorax" specular="0.20000000000000001" shininess="0.20000000000000001" rgba="1 1 1 1"/>
+    <texture name="nmf/headthorax" builtin="flat" rgb1="0.58999999999999997 0.39000000000000001 0.12" rgb2="0.58999999999999997 0.39000000000000001 0.12" mark="random" markrgb="0.69999999999999996 0.48999999999999999 0.20000000000000001" random="0.29999999999999999" width="50" height="50"/>
+    <material name="nmf/antennaproboscis" class="nmf/" texture="nmf/antennaproboscis" specular="0.20000000000000001" shininess="0.20000000000000001" rgba="1 1 1 1"/>
+    <texture name="nmf/antennaproboscis" builtin="flat" rgb1="0.58999999999999997 0.39000000000000001 0.12" rgb2="0.58999999999999997 0.39000000000000001 0.12" mark="random" markrgb="0 0 0" random="0.10000000000000001" width="50" height="50"/>
+    <material name="nmf/abdomen12345" class="nmf/" texture="nmf/abdomen12345" specular="0.20000000000000001" shininess="0.20000000000000001" rgba="1 1 1 1"/>
+    <texture name="nmf/abdomen12345" builtin="gradient" rgb1="0.58999999999999997 0.39000000000000001 0.12" rgb2="0.81999999999999995 0.67000000000000004 0.46999999999999997" mark="random" markrgb="0.69999999999999996 0.48999999999999999 0.20000000000000001" random="0.29999999999999999" width="50" height="50"/>
+    <material name="nmf/abdomen6" class="nmf/" texture="nmf/abdomen6" specular="0.20000000000000001" shininess="0.20000000000000001" rgba="1 1 1 1"/>
+    <texture name="nmf/abdomen6" builtin="gradient" rgb1="0.39000000000000001 0.20000000000000001 0" rgb2="0.81999999999999995 0.67000000000000004 0.46999999999999997" mark="random" markrgb="0.69999999999999996 0.48999999999999999 0.20000000000000001" random="0.29999999999999999" width="50" height="50"/>
+    <material name="nmf/coxa" class="nmf/" texture="nmf/coxa" specular="0.20000000000000001" shininess="0.20000000000000001" rgba="1 1 1 1"/>
+    <texture name="nmf/coxa" builtin="flat" rgb1="0.58999999999999997 0.39000000000000001 0.12" rgb2="0.58999999999999997 0.39000000000000001 0.12" mark="random" markrgb="0 0 0" random="0.050000000000000003" width="50" height="50"/>
+    <material name="nmf/trochanterfemur" class="nmf/" texture="nmf/trochanterfemur" specular="0.20000000000000001" shininess="0.20000000000000001" rgba="1 1 1 1"/>
+    <texture name="nmf/trochanterfemur" builtin="flat" rgb1="0.63 0.42999999999999999 0.16" rgb2="0.63 0.42999999999999999 0.16" mark="random" markrgb="0 0 0" random="0.050000000000000003" width="50" height="50"/>
+    <material name="nmf/tibia" class="nmf/" texture="nmf/tibia" specular="0.20000000000000001" shininess="0.20000000000000001" rgba="1 1 1 1"/>
+    <texture name="nmf/tibia" builtin="flat" rgb1="0.67000000000000004 0.46999999999999997 0.20000000000000001" rgb2="0.67000000000000004 0.46999999999999997 0.20000000000000001" mark="random" markrgb="0 0 0" random="0.050000000000000003" width="50" height="50"/>
+    <material name="nmf/tarsus" class="nmf/" texture="nmf/tarsus" specular="0.20000000000000001" shininess="0.20000000000000001" rgba="1 1 1 1"/>
+    <texture name="nmf/tarsus" builtin="flat" rgb1="0.70999999999999996 0.51000000000000001 0.23999999999999999" rgb2="0.70999999999999996 0.51000000000000001 0.23999999999999999" mark="random" markrgb="0 0 0" random="0.050000000000000003" width="50" height="50"/>
+  </asset>
+  <worldbody>
+    <geom name="ground_plane" class="/" type="plane" contype="0" conaffinity="0" size="1000 1000 1" material="grid" pos="0 0 0"/>
+    <site name="nmf" class="/" pos="0 0 0.69999999999999996" quat="1 0 0 0"/>
+    <body pos="0 0 0.69999999999999996" quat="1 0 0 0" name="nmf/">
+      <freejoint name="nmf/nmf/"/>
+      <body name="nmf/c_thorax" pos="0.496 0 1.3" quat="1 0 0 0">
+        <geom name="nmf/c_thorax" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/headthorax" mass="0.00030699999999999998" mesh="nmf/c_thorax"/>
+        <body name="nmf/c_head" pos="0.0287 0 0.00069800000000000005" quat="1 0 0 0">
+          <geom name="nmf/c_head" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/headthorax" mass="9.4599999999999996e-05" mesh="nmf/c_head"/>
+          <body name="nmf/c_rostrum" pos="0.42999999999999999 0 -0.27400000000000002" quat="1 0 0 0">
+            <geom name="nmf/c_rostrum" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/antennaproboscis" mass="1.8199999999999999e-05" mesh="nmf/c_rostrum"/>
+            <body name="nmf/c_haustellum" pos="-0.371 0 -0.019599999999999999" quat="1 0 0 0">
+              <geom name="nmf/c_haustellum" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/antennaproboscis" mass="8.0900000000000005e-06" mesh="nmf/c_haustellum"/>
+              <joint name="nmf/c_rostrum-c_haustellum-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+              <joint name="nmf/c_rostrum-c_haustellum-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+              <joint name="nmf/c_rostrum-c_haustellum-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+            </body>
+            <joint name="nmf/c_head-c_rostrum-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/c_head-c_rostrum-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/c_head-c_rostrum-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+          </body>
+          <body name="nmf/l_eye" pos="0.23100000000000001 -9.3099999999999999e-10 0.017000000000000001" quat="1 0 0 0">
+            <geom name="nmf/l_eye" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/eye" mass="1.2500000000000001e-05" mesh="nmf/l_eye"/>
+            <joint name="nmf/c_head-l_eye-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/c_head-l_eye-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/c_head-l_eye-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+          </body>
+          <body name="nmf/r_eye" pos="0.23100000000000001 9.3099999999999999e-10 0.017000000000000001" quat="1 0 0 0">
+            <geom name="nmf/r_eye" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/eye" mass="1.0900000000000001e-05" mesh="nmf/r_eye"/>
+            <joint name="nmf/c_head-r_eye-roll" class="nmf/" type="hinge" axis="0 0 -1" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/c_head-r_eye-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/c_head-r_eye-yaw" class="nmf/" type="hinge" axis="-1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+          </body>
+          <body name="nmf/l_pedicel" pos="0.42899999999999999 0.085999999999999993 0.083000000000000004" quat="1 0 0 0">
+            <geom name="nmf/l_pedicel" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/antennaproboscis" mass="8.6600000000000005e-07" mesh="nmf/l_pedicel"/>
+            <body name="nmf/l_funiculus" pos="0.050999999999999997 -0.00056300000000000002 -0.0441" quat="1 0 0 0">
+              <geom name="nmf/l_funiculus" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/antennaproboscis" mass="1.1000000000000001e-06" mesh="nmf/l_funiculus"/>
+              <body name="nmf/l_arista" pos="0.019800000000000002 0.053900000000000003 -0.0683" quat="1 0 0 0">
+                <geom name="nmf/l_arista" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/arista" mass="1.1000000000000001e-07" mesh="nmf/l_arista"/>
+                <joint name="nmf/l_funiculus-l_arista-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+                <joint name="nmf/l_funiculus-l_arista-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+                <joint name="nmf/l_funiculus-l_arista-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="-0.78539816339744828" armature="9.9999999999999995e-07" damping="0.5"/>
+              </body>
+              <joint name="nmf/l_pedicel-l_funiculus-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+              <joint name="nmf/l_pedicel-l_funiculus-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+              <joint name="nmf/l_pedicel-l_funiculus-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+            </body>
+            <joint name="nmf/c_head-l_pedicel-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="-0.26179938779914941" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/c_head-l_pedicel-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/c_head-l_pedicel-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="0.87266462599716477" armature="9.9999999999999995e-07" damping="0.5"/>
+          </body>
+          <body name="nmf/r_pedicel" pos="0.42899999999999999 -0.085999999999999993 0.083000000000000004" quat="1 0 0 0">
+            <geom name="nmf/r_pedicel" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/antennaproboscis" mass="8.6199999999999996e-07" mesh="nmf/r_pedicel"/>
+            <body name="nmf/r_funiculus" pos="0.050999999999999997 0.00056300000000000002 -0.0441" quat="1 0 0 0">
+              <geom name="nmf/r_funiculus" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/antennaproboscis" mass="1.1000000000000001e-06" mesh="nmf/r_funiculus"/>
+              <body name="nmf/r_arista" pos="0.019800000000000002 -0.053900000000000003 -0.0683" quat="1 0 0 0">
+                <geom name="nmf/r_arista" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/arista" mass="1.1000000000000001e-07" mesh="nmf/r_arista"/>
+                <joint name="nmf/r_funiculus-r_arista-roll" class="nmf/" type="hinge" axis="0 0 -1" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+                <joint name="nmf/r_funiculus-r_arista-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+                <joint name="nmf/r_funiculus-r_arista-yaw" class="nmf/" type="hinge" axis="-1 0 0" stiffness="10" springref="-0.78539816339744828" armature="9.9999999999999995e-07" damping="0.5"/>
+              </body>
+              <joint name="nmf/r_pedicel-r_funiculus-roll" class="nmf/" type="hinge" axis="0 0 -1" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+              <joint name="nmf/r_pedicel-r_funiculus-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+              <joint name="nmf/r_pedicel-r_funiculus-yaw" class="nmf/" type="hinge" axis="-1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+            </body>
+            <joint name="nmf/c_head-r_pedicel-roll" class="nmf/" type="hinge" axis="0 0 -1" stiffness="10" springref="-0.26179938779914941" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/c_head-r_pedicel-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/c_head-r_pedicel-yaw" class="nmf/" type="hinge" axis="-1 0 0" stiffness="10" springref="0.87266462599716477" armature="9.9999999999999995e-07" damping="0.5"/>
+          </body>
+          <joint name="nmf/c_thorax-c_head-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-c_head-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-c_head-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+        </body>
+        <body name="nmf/c_abdomen12" pos="-0.86199999999999999 0 0" quat="0.99099999999999999 0 -0.13100000000000001 0">
+          <geom name="nmf/c_abdomen12" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/abdomen12345" mass="8.5699999999999996e-05" mesh="nmf/c_abdomen12"/>
+          <body name="nmf/c_abdomen3" pos="-0.32600000000000001 0 0.040000000000000001" quat="0.999 0 -0.042999999999999997 0">
+            <geom name="nmf/c_abdomen3" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/abdomen12345" mass="0.000107" mesh="nmf/c_abdomen3"/>
+            <body name="nmf/c_abdomen4" pos="-0.20799999999999999 0 0.025000000000000001" quat="0.999 0 0.042999999999999997 0">
+              <geom name="nmf/c_abdomen4" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/abdomen12345" mass="9.7499999999999998e-05" mesh="nmf/c_abdomen4"/>
+              <body name="nmf/c_abdomen5" pos="-0.17399999999999999 0 0.0089999999999999993" quat="1 0 0.0089999999999999993 0">
+                <geom name="nmf/c_abdomen5" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/abdomen12345" mass="9.7e-05" mesh="nmf/c_abdomen5"/>
+                <body name="nmf/c_abdomen6" pos="-0.22800000000000001 0 0.0089999999999999993" quat="1 0 0.0089999999999999993 0">
+                  <geom name="nmf/c_abdomen6" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/abdomen6" mass="6.2700000000000006e-05" mesh="nmf/c_abdomen6"/>
+                  <joint name="nmf/c_abdomen5-c_abdomen6-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+                  <joint name="nmf/c_abdomen5-c_abdomen6-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+                  <joint name="nmf/c_abdomen5-c_abdomen6-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+                </body>
+                <joint name="nmf/c_abdomen4-c_abdomen5-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+                <joint name="nmf/c_abdomen4-c_abdomen5-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+                <joint name="nmf/c_abdomen4-c_abdomen5-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+              </body>
+              <joint name="nmf/c_abdomen3-c_abdomen4-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+              <joint name="nmf/c_abdomen3-c_abdomen4-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+              <joint name="nmf/c_abdomen3-c_abdomen4-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+            </body>
+            <joint name="nmf/c_abdomen12-c_abdomen3-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/c_abdomen12-c_abdomen3-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/c_abdomen12-c_abdomen3-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+          </body>
+          <joint name="nmf/c_thorax-c_abdomen12-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-c_abdomen12-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-c_abdomen12-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+        </body>
+        <body name="nmf/l_wing" pos="-0.67400000000000004 0.39500000000000002 0.081000000000000003" quat="0.70699999999999996 0 0 0.70699999999999996">
+          <geom name="nmf/l_wing" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/wing" mass="2.5000000000000002e-06" mesh="nmf/l_wing"/>
+          <joint name="nmf/c_thorax-l_wing-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="0.17453292519943295" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-l_wing-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.05235987755982989" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-l_wing-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="-0.13962634015954636" armature="9.9999999999999995e-07" damping="0.5"/>
+        </body>
+        <body name="nmf/r_wing" pos="-0.67400000000000004 -0.39500000000000002 0.081000000000000003" quat="0.70699999999999996 0 0 -0.70699999999999996">
+          <geom name="nmf/r_wing" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/wing" mass="2.5000000000000002e-06" mesh="nmf/r_wing"/>
+          <joint name="nmf/c_thorax-r_wing-roll" class="nmf/" type="hinge" axis="0 0 -1" stiffness="10" springref="0.17453292519943295" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-r_wing-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.05235987755982989" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-r_wing-yaw" class="nmf/" type="hinge" axis="-1 0 0" stiffness="10" springref="-0.13962634015954636" armature="9.9999999999999995e-07" damping="0.5"/>
+        </body>
+        <body name="nmf/l_haltere" pos="-0.80600000000000005 0.214 -0.14899999999999999" quat="1 0 0 0">
+          <geom name="nmf/l_haltere" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/haltere" mass="1.42e-06" mesh="nmf/l_haltere"/>
+          <joint name="nmf/c_thorax-l_haltere-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="0.6108652381980153" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-l_haltere-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-l_haltere-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="0.26179938779914941" armature="9.9999999999999995e-07" damping="0.5"/>
+        </body>
+        <body name="nmf/r_haltere" pos="-0.80600000000000005 -0.214 -0.14899999999999999" quat="1 0 0 0">
+          <geom name="nmf/r_haltere" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/haltere" mass="1.42e-06" mesh="nmf/r_haltere"/>
+          <joint name="nmf/c_thorax-r_haltere-roll" class="nmf/" type="hinge" axis="0 0 -1" stiffness="10" springref="0.6108652381980153" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-r_haltere-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-r_haltere-yaw" class="nmf/" type="hinge" axis="-1 0 0" stiffness="10" springref="0.26179938779914941" armature="9.9999999999999995e-07" damping="0.5"/>
+        </body>
+        <body name="nmf/lf_coxa" pos="-0.161 0.17199999999999999 -0.23000000000000001" quat="1 0 0 0">
+          <geom name="nmf/lf_coxa" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/coxa" mass="4.5199999999999999e-06" mesh="nmf/lf_coxa"/>
+          <body name="nmf/lf_trochanterfemur" pos="-0.00181 -0.00172 -0.36499999999999999" quat="1 0 0 0">
+            <geom name="nmf/lf_trochanterfemur" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/trochanterfemur" mass="6.2899999999999999e-06" mesh="nmf/lf_trochanterfemur"/>
+            <body name="nmf/lf_tibia" pos="-0.0046499999999999996 -0.00149 -0.70499999999999996" quat="1 0 0 0">
+              <geom name="nmf/lf_tibia" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tibia" mass="2.0700000000000001e-06" mesh="nmf/lf_tibia"/>
+              <body name="nmf/lf_tarsus1" pos="-0.000144 -0.00095200000000000005 -0.51800000000000002" quat="1 0 0 0">
+                <geom name="nmf/lf_tarsus1" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="4.6499999999999999e-07" mesh="nmf/lf_tarsus1"/>
+                <body name="nmf/lf_tarsus2" pos="0.00182 -0.000977 -0.22500000000000001" quat="1 0 0 0">
+                  <geom name="nmf/lf_tarsus2" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="2.0900000000000001e-07" mesh="nmf/lf_tarsus2"/>
+                  <body name="nmf/lf_tarsus3" pos="0.0013600000000000001 -0.00017799999999999999 -0.154" quat="1 0 0 0">
+                    <geom name="nmf/lf_tarsus3" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="1.1899999999999999e-07" mesh="nmf/lf_tarsus3"/>
+                    <body name="nmf/lf_tarsus4" pos="0.0016900000000000001 0.00030299999999999999 -0.098500000000000004" quat="1 0 0 0">
+                      <geom name="nmf/lf_tarsus4" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="9.2700000000000003e-08" mesh="nmf/lf_tarsus4"/>
+                      <body name="nmf/lf_tarsus5" pos="0.0017099999999999999 -0.00021599999999999999 -0.086999999999999994" quat="1 0 0 0">
+                        <geom name="nmf/lf_tarsus5" class="nmf/" type="capsule" contype="0" conaffinity="0" material="nmf/tarsus" mass="1.15e-07" mesh="nmf/lf_tarsus5"/>
+                        <joint name="nmf/lf_tarsus4-lf_tarsus5-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                      </body>
+                      <joint name="nmf/lf_tarsus3-lf_tarsus4-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                    </body>
+                    <joint name="nmf/lf_tarsus2-lf_tarsus3-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                  </body>
+                  <joint name="nmf/lf_tarsus1-lf_tarsus2-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                </body>
+                <joint name="nmf/lf_tibia-lf_tarsus1-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.17453292519943295" armature="9.9999999999999995e-07" damping="0.5"/>
+              </body>
+              <joint name="nmf/lf_trochanterfemur-lf_tibia-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="1.3089969389957472" armature="9.9999999999999995e-07" damping="0.5"/>
+            </body>
+            <joint name="nmf/lf_coxa-lf_trochanterfemur-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="0.3490658503988659" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/lf_coxa-lf_trochanterfemur-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-2.3561944901923448" armature="9.9999999999999995e-07" damping="0.5"/>
+          </body>
+          <joint name="nmf/c_thorax-lf_coxa-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="0.3490658503988659" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-lf_coxa-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0.43633231299858238" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-lf_coxa-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+        </body>
+        <body name="nmf/lm_coxa" pos="-0.55700000000000005 0.125 -0.48199999999999998" quat="1 0 0 0">
+          <geom name="nmf/lm_coxa" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/coxa" mass="2.6000000000000001e-06" mesh="nmf/lm_coxa"/>
+          <body name="nmf/lm_trochanterfemur" pos="-0.00021599999999999999 0.00014899999999999999 -0.18099999999999999" quat="1 0 0 0">
+            <geom name="nmf/lm_trochanterfemur" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/trochanterfemur" mass="6.4799999999999998e-06" mesh="nmf/lm_trochanterfemur"/>
+            <body name="nmf/lm_tibia" pos="-0.00097099999999999997 5.52e-05 -0.78400000000000003" quat="1 0 0 0">
+              <geom name="nmf/lm_tibia" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tibia" mass="2.8600000000000001e-06" mesh="nmf/lm_tibia"/>
+              <body name="nmf/lm_tarsus1" pos="6.58e-05 -0.00036999999999999999 -0.66700000000000004" quat="1 0 0 0">
+                <geom name="nmf/lm_tarsus1" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="5.2499999999999995e-07" mesh="nmf/lm_tarsus1"/>
+                <body name="nmf/lm_tarsus2" pos="0.00051199999999999998 -9.7999999999999997e-05 -0.29199999999999998" quat="1 0 0 0">
+                  <geom name="nmf/lm_tarsus2" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="2.35e-07" mesh="nmf/lm_tarsus2"/>
+                  <body name="nmf/lm_tarsus3" pos="-2.8099999999999999e-05 -0.00015300000000000001 -0.16" quat="1 0 0 0">
+                    <geom name="nmf/lm_tarsus3" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="1.18e-07" mesh="nmf/lm_tarsus3"/>
+                    <body name="nmf/lm_tarsus4" pos="-0.000126 -0.00019100000000000001 -0.0911" quat="1 0 0 0">
+                      <geom name="nmf/lm_tarsus4" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="6.8400000000000004e-08" mesh="nmf/lm_tarsus4"/>
+                      <body name="nmf/lm_tarsus5" pos="0.00090200000000000002 9.8599999999999998e-05 -0.063500000000000001" quat="1 0 0 0">
+                        <geom name="nmf/lm_tarsus5" class="nmf/" type="capsule" contype="0" conaffinity="0" material="nmf/tarsus" mass="1.14e-07" mesh="nmf/lm_tarsus5"/>
+                        <joint name="nmf/lm_tarsus4-lm_tarsus5-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                      </body>
+                      <joint name="nmf/lm_tarsus3-lm_tarsus4-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                    </body>
+                    <joint name="nmf/lm_tarsus2-lm_tarsus3-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                  </body>
+                  <joint name="nmf/lm_tarsus1-lm_tarsus2-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                </body>
+                <joint name="nmf/lm_tibia-lm_tarsus1-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.3490658503988659" armature="9.9999999999999995e-07" damping="0.5"/>
+              </body>
+              <joint name="nmf/lm_trochanterfemur-lm_tibia-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="1.7453292519943295" armature="9.9999999999999995e-07" damping="0.5"/>
+            </body>
+            <joint name="nmf/lm_coxa-lm_trochanterfemur-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="-0.3490658503988659" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/lm_coxa-lm_trochanterfemur-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-2.3561944901923448" armature="9.9999999999999995e-07" damping="0.5"/>
+          </body>
+          <joint name="nmf/c_thorax-lm_coxa-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="1.6580627893946132" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-lm_coxa-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0.17453292519943295" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-lm_coxa-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+        </body>
+        <body name="nmf/lh_coxa" pos="-0.78400000000000003 0.086999999999999994 -0.497" quat="1 0 0 0">
+          <geom name="nmf/lh_coxa" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/coxa" mass="2.5600000000000001e-06" mesh="nmf/lh_coxa"/>
+          <body name="nmf/lh_trochanterfemur" pos="-0.00017699999999999999 -0.00022699999999999999 -0.19900000000000001" quat="1 0 0 0">
+            <geom name="nmf/lh_trochanterfemur" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/trochanterfemur" mass="8.7499999999999992e-06" mesh="nmf/lh_trochanterfemur"/>
+            <body name="nmf/lh_tibia" pos="0.000108 0.00029399999999999999 -0.83599999999999997" quat="1 0 0 0">
+              <geom name="nmf/lh_tibia" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tibia" mass="3.3699999999999999e-06" mesh="nmf/lh_tibia"/>
+              <body name="nmf/lh_tarsus1" pos="-8.9400000000000004e-07 -0.00032400000000000001 -0.68400000000000005" quat="1 0 0 0">
+                <geom name="nmf/lh_tarsus1" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="1.04e-06" mesh="nmf/lh_tarsus1"/>
+                <body name="nmf/lh_tarsus2" pos="9.6899999999999997e-05 0.00051000000000000004 -0.35299999999999998" quat="1 0 0 0">
+                  <geom name="nmf/lh_tarsus2" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="3.5199999999999998e-07" mesh="nmf/lh_tarsus2"/>
+                  <body name="nmf/lh_tarsus3" pos="0.00012300000000000001 -0.00025500000000000002 -0.17499999999999999" quat="1 0 0 0">
+                    <geom name="nmf/lh_tarsus3" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="1.35e-07" mesh="nmf/lh_tarsus3"/>
+                    <body name="nmf/lh_tarsus4" pos="-0.00025599999999999999 0.00033100000000000002 -0.096699999999999994" quat="1 0 0 0">
+                      <geom name="nmf/lh_tarsus4" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="9.0100000000000006e-08" mesh="nmf/lh_tarsus4"/>
+                      <body name="nmf/lh_tarsus5" pos="0.000214 5.8600000000000001e-05 -0.073300000000000004" quat="1 0 0 0">
+                        <geom name="nmf/lh_tarsus5" class="nmf/" type="capsule" contype="0" conaffinity="0" material="nmf/tarsus" mass="1.2499999999999999e-07" mesh="nmf/lh_tarsus5"/>
+                        <joint name="nmf/lh_tarsus4-lh_tarsus5-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                      </body>
+                      <joint name="nmf/lh_tarsus3-lh_tarsus4-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                    </body>
+                    <joint name="nmf/lh_tarsus2-lh_tarsus3-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                  </body>
+                  <joint name="nmf/lh_tarsus1-lh_tarsus2-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                </body>
+                <joint name="nmf/lh_tibia-lh_tarsus1-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+              </body>
+              <joint name="nmf/lh_trochanterfemur-lh_tibia-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="1.7453292519943295" armature="9.9999999999999995e-07" damping="0.5"/>
+            </body>
+            <joint name="nmf/lh_coxa-lh_trochanterfemur-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="-0.17453292519943295" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/lh_coxa-lh_trochanterfemur-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-1.9198621771937625" armature="9.9999999999999995e-07" damping="0.5"/>
+          </body>
+          <joint name="nmf/c_thorax-lh_coxa-roll" class="nmf/" type="hinge" axis="0 0 1" stiffness="10" springref="2.4434609527920612" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-lh_coxa-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.3490658503988659" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-lh_coxa-yaw" class="nmf/" type="hinge" axis="1 0 0" stiffness="10" springref="0.17453292519943295" armature="9.9999999999999995e-07" damping="0.5"/>
+        </body>
+        <body name="nmf/rf_coxa" pos="-0.161 -0.17199999999999999 -0.23000000000000001" quat="1 0 0 0">
+          <geom name="nmf/rf_coxa" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/coxa" mass="4.5199999999999999e-06" mesh="nmf/rf_coxa"/>
+          <body name="nmf/rf_trochanterfemur" pos="-0.00181 0.00172 -0.36499999999999999" quat="1 0 0 0">
+            <geom name="nmf/rf_trochanterfemur" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/trochanterfemur" mass="6.2899999999999999e-06" mesh="nmf/rf_trochanterfemur"/>
+            <body name="nmf/rf_tibia" pos="-0.0046499999999999996 0.00149 -0.70499999999999996" quat="1 0 0 0">
+              <geom name="nmf/rf_tibia" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tibia" mass="2.0700000000000001e-06" mesh="nmf/rf_tibia"/>
+              <body name="nmf/rf_tarsus1" pos="-0.000144 0.00095200000000000005 -0.51800000000000002" quat="1 0 0 0">
+                <geom name="nmf/rf_tarsus1" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="4.6499999999999999e-07" mesh="nmf/rf_tarsus1"/>
+                <body name="nmf/rf_tarsus2" pos="0.00182 0.000977 -0.22500000000000001" quat="1 0 0 0">
+                  <geom name="nmf/rf_tarsus2" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="2.0900000000000001e-07" mesh="nmf/rf_tarsus2"/>
+                  <body name="nmf/rf_tarsus3" pos="0.0013600000000000001 0.00017799999999999999 -0.154" quat="1 0 0 0">
+                    <geom name="nmf/rf_tarsus3" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="1.1899999999999999e-07" mesh="nmf/rf_tarsus3"/>
+                    <body name="nmf/rf_tarsus4" pos="0.0016900000000000001 -0.00030299999999999999 -0.098500000000000004" quat="1 0 0 0">
+                      <geom name="nmf/rf_tarsus4" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="9.2700000000000003e-08" mesh="nmf/rf_tarsus4"/>
+                      <body name="nmf/rf_tarsus5" pos="0.0017099999999999999 0.00021599999999999999 -0.086999999999999994" quat="1 0 0 0">
+                        <geom name="nmf/rf_tarsus5" class="nmf/" type="capsule" contype="0" conaffinity="0" material="nmf/tarsus" mass="1.15e-07" mesh="nmf/rf_tarsus5"/>
+                        <joint name="nmf/rf_tarsus4-rf_tarsus5-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                      </body>
+                      <joint name="nmf/rf_tarsus3-rf_tarsus4-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                    </body>
+                    <joint name="nmf/rf_tarsus2-rf_tarsus3-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                  </body>
+                  <joint name="nmf/rf_tarsus1-rf_tarsus2-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                </body>
+                <joint name="nmf/rf_tibia-rf_tarsus1-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.17453292519943295" armature="9.9999999999999995e-07" damping="0.5"/>
+              </body>
+              <joint name="nmf/rf_trochanterfemur-rf_tibia-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="1.3089969389957472" armature="9.9999999999999995e-07" damping="0.5"/>
+            </body>
+            <joint name="nmf/rf_coxa-rf_trochanterfemur-roll" class="nmf/" type="hinge" axis="0 0 -1" stiffness="10" springref="0.3490658503988659" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/rf_coxa-rf_trochanterfemur-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-2.3561944901923448" armature="9.9999999999999995e-07" damping="0.5"/>
+          </body>
+          <joint name="nmf/c_thorax-rf_coxa-roll" class="nmf/" type="hinge" axis="0 0 -1" stiffness="10" springref="0.3490658503988659" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-rf_coxa-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0.43633231299858238" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-rf_coxa-yaw" class="nmf/" type="hinge" axis="-1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+        </body>
+        <body name="nmf/rm_coxa" pos="-0.55700000000000005 -0.125 -0.48199999999999998" quat="1 0 0 0">
+          <geom name="nmf/rm_coxa" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/coxa" mass="2.6000000000000001e-06" mesh="nmf/rm_coxa"/>
+          <body name="nmf/rm_trochanterfemur" pos="-0.00021599999999999999 -0.00014899999999999999 -0.18099999999999999" quat="1 0 0 0">
+            <geom name="nmf/rm_trochanterfemur" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/trochanterfemur" mass="6.4799999999999998e-06" mesh="nmf/rm_trochanterfemur"/>
+            <body name="nmf/rm_tibia" pos="-0.00097099999999999997 -5.52e-05 -0.78400000000000003" quat="1 0 0 0">
+              <geom name="nmf/rm_tibia" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tibia" mass="2.8600000000000001e-06" mesh="nmf/rm_tibia"/>
+              <body name="nmf/rm_tarsus1" pos="6.58e-05 0.00036999999999999999 -0.66700000000000004" quat="1 0 0 0">
+                <geom name="nmf/rm_tarsus1" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="5.2499999999999995e-07" mesh="nmf/rm_tarsus1"/>
+                <body name="nmf/rm_tarsus2" pos="0.00051199999999999998 9.7999999999999997e-05 -0.29199999999999998" quat="1 0 0 0">
+                  <geom name="nmf/rm_tarsus2" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="2.35e-07" mesh="nmf/rm_tarsus2"/>
+                  <body name="nmf/rm_tarsus3" pos="-2.8099999999999999e-05 0.00015300000000000001 -0.16" quat="1 0 0 0">
+                    <geom name="nmf/rm_tarsus3" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="1.18e-07" mesh="nmf/rm_tarsus3"/>
+                    <body name="nmf/rm_tarsus4" pos="-0.000126 0.00019100000000000001 -0.0911" quat="1 0 0 0">
+                      <geom name="nmf/rm_tarsus4" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="6.8400000000000004e-08" mesh="nmf/rm_tarsus4"/>
+                      <body name="nmf/rm_tarsus5" pos="0.00090200000000000002 -9.8599999999999998e-05 -0.063500000000000001" quat="1 0 0 0">
+                        <geom name="nmf/rm_tarsus5" class="nmf/" type="capsule" contype="0" conaffinity="0" material="nmf/tarsus" mass="1.14e-07" mesh="nmf/rm_tarsus5"/>
+                        <joint name="nmf/rm_tarsus4-rm_tarsus5-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                      </body>
+                      <joint name="nmf/rm_tarsus3-rm_tarsus4-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                    </body>
+                    <joint name="nmf/rm_tarsus2-rm_tarsus3-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                  </body>
+                  <joint name="nmf/rm_tarsus1-rm_tarsus2-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                </body>
+                <joint name="nmf/rm_tibia-rm_tarsus1-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.3490658503988659" armature="9.9999999999999995e-07" damping="0.5"/>
+              </body>
+              <joint name="nmf/rm_trochanterfemur-rm_tibia-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="1.7453292519943295" armature="9.9999999999999995e-07" damping="0.5"/>
+            </body>
+            <joint name="nmf/rm_coxa-rm_trochanterfemur-roll" class="nmf/" type="hinge" axis="0 0 -1" stiffness="10" springref="-0.3490658503988659" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/rm_coxa-rm_trochanterfemur-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-2.3561944901923448" armature="9.9999999999999995e-07" damping="0.5"/>
+          </body>
+          <joint name="nmf/c_thorax-rm_coxa-roll" class="nmf/" type="hinge" axis="0 0 -1" stiffness="10" springref="1.6580627893946132" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-rm_coxa-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="0.17453292519943295" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-rm_coxa-yaw" class="nmf/" type="hinge" axis="-1 0 0" stiffness="10" springref="0" armature="9.9999999999999995e-07" damping="0.5"/>
+        </body>
+        <body name="nmf/rh_coxa" pos="-0.78400000000000003 -0.086999999999999994 -0.497" quat="1 0 0 0">
+          <geom name="nmf/rh_coxa" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/coxa" mass="2.5600000000000001e-06" mesh="nmf/rh_coxa"/>
+          <body name="nmf/rh_trochanterfemur" pos="-0.00017699999999999999 0.00022699999999999999 -0.19900000000000001" quat="1 0 0 0">
+            <geom name="nmf/rh_trochanterfemur" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/trochanterfemur" mass="8.7499999999999992e-06" mesh="nmf/rh_trochanterfemur"/>
+            <body name="nmf/rh_tibia" pos="0.000108 -0.00029399999999999999 -0.83599999999999997" quat="1 0 0 0">
+              <geom name="nmf/rh_tibia" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tibia" mass="3.3699999999999999e-06" mesh="nmf/rh_tibia"/>
+              <body name="nmf/rh_tarsus1" pos="-8.9400000000000004e-07 0.00032400000000000001 -0.68400000000000005" quat="1 0 0 0">
+                <geom name="nmf/rh_tarsus1" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="1.04e-06" mesh="nmf/rh_tarsus1"/>
+                <body name="nmf/rh_tarsus2" pos="9.6899999999999997e-05 -0.00051000000000000004 -0.35299999999999998" quat="1 0 0 0">
+                  <geom name="nmf/rh_tarsus2" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="3.5199999999999998e-07" mesh="nmf/rh_tarsus2"/>
+                  <body name="nmf/rh_tarsus3" pos="0.00012300000000000001 0.00025500000000000002 -0.17499999999999999" quat="1 0 0 0">
+                    <geom name="nmf/rh_tarsus3" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="1.35e-07" mesh="nmf/rh_tarsus3"/>
+                    <body name="nmf/rh_tarsus4" pos="-0.00025599999999999999 -0.00033100000000000002 -0.096699999999999994" quat="1 0 0 0">
+                      <geom name="nmf/rh_tarsus4" class="nmf/" type="mesh" contype="0" conaffinity="0" material="nmf/tarsus" mass="9.0100000000000006e-08" mesh="nmf/rh_tarsus4"/>
+                      <body name="nmf/rh_tarsus5" pos="0.000214 -5.8600000000000001e-05 -0.073300000000000004" quat="1 0 0 0">
+                        <geom name="nmf/rh_tarsus5" class="nmf/" type="capsule" contype="0" conaffinity="0" material="nmf/tarsus" mass="1.2499999999999999e-07" mesh="nmf/rh_tarsus5"/>
+                        <joint name="nmf/rh_tarsus4-rh_tarsus5-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                      </body>
+                      <joint name="nmf/rh_tarsus3-rh_tarsus4-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                    </body>
+                    <joint name="nmf/rh_tarsus2-rh_tarsus3-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                  </body>
+                  <joint name="nmf/rh_tarsus1-rh_tarsus2-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+                </body>
+                <joint name="nmf/rh_tibia-rh_tarsus1-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.087266462599716474" armature="9.9999999999999995e-07" damping="0.5"/>
+              </body>
+              <joint name="nmf/rh_trochanterfemur-rh_tibia-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="1.7453292519943295" armature="9.9999999999999995e-07" damping="0.5"/>
+            </body>
+            <joint name="nmf/rh_coxa-rh_trochanterfemur-roll" class="nmf/" type="hinge" axis="0 0 -1" stiffness="10" springref="-0.17453292519943295" armature="9.9999999999999995e-07" damping="0.5"/>
+            <joint name="nmf/rh_coxa-rh_trochanterfemur-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-1.9198621771937625" armature="9.9999999999999995e-07" damping="0.5"/>
+          </body>
+          <joint name="nmf/c_thorax-rh_coxa-roll" class="nmf/" type="hinge" axis="0 0 -1" stiffness="10" springref="2.4434609527920612" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-rh_coxa-pitch" class="nmf/" type="hinge" axis="0 1 0" stiffness="10" springref="-0.3490658503988659" armature="9.9999999999999995e-07" damping="0.5"/>
+          <joint name="nmf/c_thorax-rh_coxa-yaw" class="nmf/" type="hinge" axis="-1 0 0" stiffness="10" springref="0.17453292519943295" armature="9.9999999999999995e-07" damping="0.5"/>
+        </body>
+      </body>
+      <camera name="nmf/trackcam" class="nmf/" mode="track" target="nmf/c_thorax" fovy="30" pos="0 -7.5 6" xyaxes="1 0 0 0 0.59999999999999998 0.80000000000000004"/>
+    </body>
+  </worldbody>
+  <contact>
+    <pair name="c_thorax-ground" class="/" geom1="nmf/c_thorax" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="c_head-ground" class="/" geom1="nmf/c_head" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="c_abdomen12-ground" class="/" geom1="nmf/c_abdomen12" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="c_abdomen3-ground" class="/" geom1="nmf/c_abdomen3" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="c_abdomen4-ground" class="/" geom1="nmf/c_abdomen4" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="c_abdomen5-ground" class="/" geom1="nmf/c_abdomen5" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="c_abdomen6-ground" class="/" geom1="nmf/c_abdomen6" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lf_coxa-ground" class="/" geom1="nmf/lf_coxa" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lf_trochanterfemur-ground" class="/" geom1="nmf/lf_trochanterfemur" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lf_tibia-ground" class="/" geom1="nmf/lf_tibia" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lf_tarsus1-ground" class="/" geom1="nmf/lf_tarsus1" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lf_tarsus2-ground" class="/" geom1="nmf/lf_tarsus2" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lf_tarsus3-ground" class="/" geom1="nmf/lf_tarsus3" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lf_tarsus4-ground" class="/" geom1="nmf/lf_tarsus4" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lf_tarsus5-ground" class="/" geom1="nmf/lf_tarsus5" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lm_coxa-ground" class="/" geom1="nmf/lm_coxa" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lm_trochanterfemur-ground" class="/" geom1="nmf/lm_trochanterfemur" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lm_tibia-ground" class="/" geom1="nmf/lm_tibia" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lm_tarsus1-ground" class="/" geom1="nmf/lm_tarsus1" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lm_tarsus2-ground" class="/" geom1="nmf/lm_tarsus2" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lm_tarsus3-ground" class="/" geom1="nmf/lm_tarsus3" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lm_tarsus4-ground" class="/" geom1="nmf/lm_tarsus4" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lm_tarsus5-ground" class="/" geom1="nmf/lm_tarsus5" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lh_coxa-ground" class="/" geom1="nmf/lh_coxa" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lh_trochanterfemur-ground" class="/" geom1="nmf/lh_trochanterfemur" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lh_tibia-ground" class="/" geom1="nmf/lh_tibia" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lh_tarsus1-ground" class="/" geom1="nmf/lh_tarsus1" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lh_tarsus2-ground" class="/" geom1="nmf/lh_tarsus2" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lh_tarsus3-ground" class="/" geom1="nmf/lh_tarsus3" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lh_tarsus4-ground" class="/" geom1="nmf/lh_tarsus4" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="lh_tarsus5-ground" class="/" geom1="nmf/lh_tarsus5" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rf_coxa-ground" class="/" geom1="nmf/rf_coxa" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rf_trochanterfemur-ground" class="/" geom1="nmf/rf_trochanterfemur" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rf_tibia-ground" class="/" geom1="nmf/rf_tibia" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rf_tarsus1-ground" class="/" geom1="nmf/rf_tarsus1" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rf_tarsus2-ground" class="/" geom1="nmf/rf_tarsus2" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rf_tarsus3-ground" class="/" geom1="nmf/rf_tarsus3" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rf_tarsus4-ground" class="/" geom1="nmf/rf_tarsus4" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rf_tarsus5-ground" class="/" geom1="nmf/rf_tarsus5" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rm_coxa-ground" class="/" geom1="nmf/rm_coxa" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rm_trochanterfemur-ground" class="/" geom1="nmf/rm_trochanterfemur" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rm_tibia-ground" class="/" geom1="nmf/rm_tibia" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rm_tarsus1-ground" class="/" geom1="nmf/rm_tarsus1" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rm_tarsus2-ground" class="/" geom1="nmf/rm_tarsus2" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rm_tarsus3-ground" class="/" geom1="nmf/rm_tarsus3" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rm_tarsus4-ground" class="/" geom1="nmf/rm_tarsus4" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rm_tarsus5-ground" class="/" geom1="nmf/rm_tarsus5" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rh_coxa-ground" class="/" geom1="nmf/rh_coxa" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rh_trochanterfemur-ground" class="/" geom1="nmf/rh_trochanterfemur" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rh_tibia-ground" class="/" geom1="nmf/rh_tibia" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rh_tarsus1-ground" class="/" geom1="nmf/rh_tarsus1" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rh_tarsus2-ground" class="/" geom1="nmf/rh_tarsus2" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rh_tarsus3-ground" class="/" geom1="nmf/rh_tarsus3" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rh_tarsus4-ground" class="/" geom1="nmf/rh_tarsus4" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+    <pair name="rh_tarsus5-ground" class="/" geom1="nmf/rh_tarsus5" geom2="ground_plane" friction="1 1 0.02 0.0001 0.0001" solref="0.00020000000000000001 1" solimp="0.97999999999999998 0.98999999999999999 0.5 3" margin="0.001"/>
+  </contact>
+  <actuator>
+    <position name="nmf/c_thorax-lf_coxa-roll-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-lf_coxa-roll" kp="50"/>
+    <position name="nmf/c_thorax-lf_coxa-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-lf_coxa-pitch" kp="50"/>
+    <position name="nmf/c_thorax-lf_coxa-yaw-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-lf_coxa-yaw" kp="50"/>
+    <position name="nmf/lf_coxa-lf_trochanterfemur-roll-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/lf_coxa-lf_trochanterfemur-roll" kp="50"/>
+    <position name="nmf/lf_coxa-lf_trochanterfemur-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/lf_coxa-lf_trochanterfemur-pitch" kp="50"/>
+    <position name="nmf/lf_trochanterfemur-lf_tibia-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/lf_trochanterfemur-lf_tibia-pitch" kp="50"/>
+    <position name="nmf/lf_tibia-lf_tarsus1-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/lf_tibia-lf_tarsus1-pitch" kp="50"/>
+    <position name="nmf/c_thorax-lm_coxa-roll-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-lm_coxa-roll" kp="50"/>
+    <position name="nmf/c_thorax-lm_coxa-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-lm_coxa-pitch" kp="50"/>
+    <position name="nmf/c_thorax-lm_coxa-yaw-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-lm_coxa-yaw" kp="50"/>
+    <position name="nmf/lm_coxa-lm_trochanterfemur-roll-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/lm_coxa-lm_trochanterfemur-roll" kp="50"/>
+    <position name="nmf/lm_coxa-lm_trochanterfemur-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/lm_coxa-lm_trochanterfemur-pitch" kp="50"/>
+    <position name="nmf/lm_trochanterfemur-lm_tibia-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/lm_trochanterfemur-lm_tibia-pitch" kp="50"/>
+    <position name="nmf/lm_tibia-lm_tarsus1-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/lm_tibia-lm_tarsus1-pitch" kp="50"/>
+    <position name="nmf/c_thorax-lh_coxa-roll-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-lh_coxa-roll" kp="50"/>
+    <position name="nmf/c_thorax-lh_coxa-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-lh_coxa-pitch" kp="50"/>
+    <position name="nmf/c_thorax-lh_coxa-yaw-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-lh_coxa-yaw" kp="50"/>
+    <position name="nmf/lh_coxa-lh_trochanterfemur-roll-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/lh_coxa-lh_trochanterfemur-roll" kp="50"/>
+    <position name="nmf/lh_coxa-lh_trochanterfemur-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/lh_coxa-lh_trochanterfemur-pitch" kp="50"/>
+    <position name="nmf/lh_trochanterfemur-lh_tibia-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/lh_trochanterfemur-lh_tibia-pitch" kp="50"/>
+    <position name="nmf/lh_tibia-lh_tarsus1-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/lh_tibia-lh_tarsus1-pitch" kp="50"/>
+    <position name="nmf/c_thorax-rf_coxa-roll-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-rf_coxa-roll" kp="50"/>
+    <position name="nmf/c_thorax-rf_coxa-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-rf_coxa-pitch" kp="50"/>
+    <position name="nmf/c_thorax-rf_coxa-yaw-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-rf_coxa-yaw" kp="50"/>
+    <position name="nmf/rf_coxa-rf_trochanterfemur-roll-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/rf_coxa-rf_trochanterfemur-roll" kp="50"/>
+    <position name="nmf/rf_coxa-rf_trochanterfemur-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/rf_coxa-rf_trochanterfemur-pitch" kp="50"/>
+    <position name="nmf/rf_trochanterfemur-rf_tibia-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/rf_trochanterfemur-rf_tibia-pitch" kp="50"/>
+    <position name="nmf/rf_tibia-rf_tarsus1-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/rf_tibia-rf_tarsus1-pitch" kp="50"/>
+    <position name="nmf/c_thorax-rm_coxa-roll-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-rm_coxa-roll" kp="50"/>
+    <position name="nmf/c_thorax-rm_coxa-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-rm_coxa-pitch" kp="50"/>
+    <position name="nmf/c_thorax-rm_coxa-yaw-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-rm_coxa-yaw" kp="50"/>
+    <position name="nmf/rm_coxa-rm_trochanterfemur-roll-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/rm_coxa-rm_trochanterfemur-roll" kp="50"/>
+    <position name="nmf/rm_coxa-rm_trochanterfemur-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/rm_coxa-rm_trochanterfemur-pitch" kp="50"/>
+    <position name="nmf/rm_trochanterfemur-rm_tibia-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/rm_trochanterfemur-rm_tibia-pitch" kp="50"/>
+    <position name="nmf/rm_tibia-rm_tarsus1-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/rm_tibia-rm_tarsus1-pitch" kp="50"/>
+    <position name="nmf/c_thorax-rh_coxa-roll-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-rh_coxa-roll" kp="50"/>
+    <position name="nmf/c_thorax-rh_coxa-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-rh_coxa-pitch" kp="50"/>
+    <position name="nmf/c_thorax-rh_coxa-yaw-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/c_thorax-rh_coxa-yaw" kp="50"/>
+    <position name="nmf/rh_coxa-rh_trochanterfemur-roll-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/rh_coxa-rh_trochanterfemur-roll" kp="50"/>
+    <position name="nmf/rh_coxa-rh_trochanterfemur-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/rh_coxa-rh_trochanterfemur-pitch" kp="50"/>
+    <position name="nmf/rh_trochanterfemur-rh_tibia-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/rh_trochanterfemur-rh_tibia-pitch" kp="50"/>
+    <position name="nmf/rh_tibia-rh_tarsus1-pitch-position" class="nmf/" forcelimited="true" forcerange="-30 30" joint="nmf/rh_tibia-rh_tarsus1-pitch" kp="50"/>
+  </actuator>
+  <sensor>
+    <contact name="ground_contact_lf_leg" num="1" data="found force torque pos normal tangent" reduce="netforce" subtree1="nmf/lf_coxa" geom2="ground_plane"/>
+    <contact name="ground_contact_lm_leg" num="1" data="found force torque pos normal tangent" reduce="netforce" subtree1="nmf/lm_coxa" geom2="ground_plane"/>
+    <contact name="ground_contact_lh_leg" num="1" data="found force torque pos normal tangent" reduce="netforce" subtree1="nmf/lh_coxa" geom2="ground_plane"/>
+    <contact name="ground_contact_rf_leg" num="1" data="found force torque pos normal tangent" reduce="netforce" subtree1="nmf/rf_coxa" geom2="ground_plane"/>
+    <contact name="ground_contact_rm_leg" num="1" data="found force torque pos normal tangent" reduce="netforce" subtree1="nmf/rm_coxa" geom2="ground_plane"/>
+    <contact name="ground_contact_rh_leg" num="1" data="found force torque pos normal tangent" reduce="netforce" subtree1="nmf/rh_coxa" geom2="ground_plane"/>
+  </sensor>
+  <keyframe>
+    <key name="neutral" time="0" qpos="0 0 0.69999999999999996 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.26179938779914941 0.087266462599716474 0.87266462599716477 0 0 0 0 0 -0.78539816339744828 -0.26179938779914941 0.087266462599716474 0.87266462599716477 0 0 0 0 0 -0.78539816339744828 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.17453292519943295 -0.05235987755982989 -0.13962634015954636 0.17453292519943295 -0.05235987755982989 -0.13962634015954636 0.6108652381980153 0 0.26179938779914941 0.6108652381980153 0 0.26179938779914941 0.3490658503988659 0.43633231299858238 0 0.3490658503988659 -2.3561944901923448 1.3089969389957472 -0.17453292519943295 -0.087266462599716474 -0.087266462599716474 -0.087266462599716474 -0.087266462599716474 1.6580627893946132 0.17453292519943295 0 -0.3490658503988659 -2.3561944901923448 1.7453292519943295 -0.3490658503988659 -0.087266462599716474 -0.087266462599716474 -0.087266462599716474 -0.087266462599716474 2.4434609527920612 -0.3490658503988659 0.17453292519943295 -0.17453292519943295 -1.9198621771937625 1.7453292519943295 -0.087266462599716474 -0.087266462599716474 -0.087266462599716474 -0.087266462599716474 -0.087266462599716474 0.3490658503988659 0.43633231299858238 0 0.3490658503988659 -2.3561944901923448 1.3089969389957472 -0.17453292519943295 -0.087266462599716474 -0.087266462599716474 -0.087266462599716474 -0.087266462599716474 1.6580627893946132 0.17453292519943295 0 -0.3490658503988659 -2.3561944901923448 1.7453292519943295 -0.3490658503988659 -0.087266462599716474 -0.087266462599716474 -0.087266462599716474 -0.087266462599716474 2.4434609527920612 -0.3490658503988659 0.17453292519943295 -0.17453292519943295 -1.9198621771937625 1.7453292519943295 -0.087266462599716474 -0.087266462599716474 -0.087266462599716474 -0.087266462599716474 -0.087266462599716474" ctrl="0.3490658503988659 0.43633231299858238 0 0.3490658503988659 -2.3561944901923448 1.3089969389957472 -0.17453292519943295 1.6580627893946132 0.17453292519943295 0 -0.3490658503988659 -2.3561944901923448 1.7453292519943295 -0.3490658503988659 2.4434609527920612 -0.3490658503988659 0.17453292519943295 -0.17453292519943295 -1.9198621771937625 1.7453292519943295 -0.087266462599716474 0.3490658503988659 0.43633231299858238 0 0.3490658503988659 -2.3561944901923448 1.3089969389957472 -0.17453292519943295 1.6580627893946132 0.17453292519943295 0 -0.3490658503988659 -2.3561944901923448 1.7453292519943295 -0.3490658503988659 2.4434609527920612 -0.3490658503988659 0.17453292519943295 -0.17453292519943295 -1.9198621771937625 1.7453292519943295 -0.087266462599716474"/>
+  </keyframe>
+</mujoco>
